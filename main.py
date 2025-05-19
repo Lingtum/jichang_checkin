@@ -35,9 +35,9 @@ try:
         push_url = 'https://sctapi.ftqq.com/{}.send?title=机场签到&desp={}'.format(SCKEY, content)
         requests.post(url=push_url)
         print('推送成功')
-except:
+except Exception as e:
     content = '签到失败'
-    print(content)
+    print(f"{content}，错误信息：{str(e)}")
     if SCKEY != '':
         push_url = 'https://sctapi.ftqq.com/{}.send?title=机场签到&desp={}'.format(SCKEY, content)
         requests.post(url=push_url)
