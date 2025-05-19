@@ -10,6 +10,11 @@ passwd = os.environ.get('PASSWD')
 # server酱
 SCKEY = os.environ.get('SCKEY')
 
+print(f"URL: {url}")
+print(f"Email: {email}")
+print(f"Password: {passwd}")
+print(f"SCKEY: {SCKEY}")
+
 login_url = '{}/auth/login'.format(url)
 check_url = '{}/user/checkin'.format(url)
 
