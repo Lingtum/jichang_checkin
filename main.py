@@ -24,7 +24,12 @@ data = {
 }
 try:
     print('进行登录...')
-    response = json.loads(session.post(url=login_url,headers=header,data=data).text)
+    login_res = session.post(url=login_url, headers=header, data=data)
+    print(f"登录状态码: {login_res.status_code}")
+    print("登录原始响应内容：")
+    print(login_res.text)
+    response = login_res.json()
+    # response = json.loads(session.post(url=login_url,headers=header,data=data).text)
     print(response['msg'])
     # 进行签到
     result = json.loads(session.post(url=check_url,headers=header).text)
